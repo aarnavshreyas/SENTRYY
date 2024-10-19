@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings</title>
+    <link rel="stylesheet" href="settings.css">
+</head>
+<body>
+    <h1>Settings</h1>
+
+    <!-- Settings Grid -->
+    <div class="settings-grid">
+        <!-- Severity Settings -->
+        <div class="card severity">
+            <h2>Severity Settings</h2>
+            <p>Adjust the severity levels for incidents:</p>
+            <select>
+                <option value="low">Low</option>
+                <option value="moderate">Moderate</option>
+                <option value="high">High</option>
+            </select>
+            <button>Save</button>
+        </div>
+
+        <!-- Notifications Settings -->
+        <div class="card notifications">
+            <h2>Notification Settings</h2>
+            <p>Select the type of alerts for incidents:</p>
+            <select>
+                <option value="email">Email Alerts</option>
+                <option value="sms">SMS Notifications</option>
+                <option value="in-app">In-App Notifications</option>
+            </select>
+            <button>Save</button>
+        </div>
+
+        <!-- Gas Safety Thresholds -->
+        <div class="card gas-safety">
+            <h2>Gas Safety Thresholds</h2>
+            <p>Set safety limits for gases:</p>
+            <div class="subgrid">
+                <div class="subcard">
+                    <h3>N2 Level</h3>
+                    <input type="number" min="0" max="100" value="25"> %
+                </div>
+                <div class="subcard">
+                    <h3>N2O Level</h3>
+                    <input type="number" min="0" max="100" value="15"> %
+                </div>
+                <div class="subcard">
+                    <h3>He Level</h3>
+                    <input type="number" min="0" max="100" value="5"> %
+                </div>
+            </div>
+            <button>Save</button>
+        </div>
+
+        <!-- Chemical Safety Levels -->
+        <div class="card chemical-safety">
+            <h2>Chemical Safety Levels</h2>
+            <p>Set chemical safety thresholds:</p>
+            <div class="subgrid">
+                <div class="subcard">
+                    <h3>HCl</h3>
+                    <input type="number" min="0" max="100" value="30"> %
+                </div>
+                <div class="subcard">
+                    <h3>Alumina</h3>
+                    <input type="number" min="0" max="100" value="10"> %
+                </div>
+            </div>
+            <button>Save</button>
+        </div>
+
+        <!-- Sensor Configuration -->
+        <div class="card sensor-config">
+            <h2>Sensor Configuration</h2>
+            <p>Configure IoT sensors:</p>
+            <select>
+                <option value="temperature">Temperature Sensors</option>
+                <option value="pressure">Pressure Sensors</option>
+                <option value="gas">Gas Sensors</option>
+            </select>
+            <button>Save</button>
+        </div>
+
+        <!-- Camera Configuration -->
+        <div class="card camera-config">
+            <h2>Camera Configuration</h2>
+            <p>Set up surveillance cameras:</p>
+            <div class="subgrid">
+                <div class="subcard">
+                    <h3>Camera 1</h3>
+                    <select>
+                        <option value="active">Active</option>
+                        <option value="inactive">Inactive</option>
+                    </select>
+                </div>
+                <div class="subcard">
+                    <h3>Camera 2</h3>
+                    <select>
+                        <option value="active">Active</option>
+                        <option value="inactive">Inactive</option>
+                    </select>
+                </div>
+                <div class="subcard">
+                    <h3>Camera 3</h3>
+                    <select>
+                        <option value="active">Active</option>
+                        <option value="inactive">Inactive</option>
+                    </select>
+                </div>
+            </div>
+            <button>Save</button>
+        </div>
+
+        <!-- Additional Configuration Example: Power Systems -->
+        <div class="card power-config">
+            <h2>Power Systems Configuration</h2>
+            <p>Manage backup power systems:</p>
+            <select>
+                <option value="generator">Backup Generators</option>
+                <option value="battery">Battery Systems</option>
+            </select>
+            <button>Save</button>
+        </div>
+
+    </div>
+
+</body>
+</html>

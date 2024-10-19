@@ -1,0 +1,97 @@
+:root {
+    --primary-color: #4CAF50;
+    --secondary-color: #FFC107;
+    --text-color: #333333;
+    --background-color: #F9F9F9;
+    --font-size-base: 16px;
+    --font-size-heading: 2rem;
+    --font-family: 'Roboto', sans-serif;
+    --border-radius: 5px;
+    --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+body {
+    font-family: var(--font-family);
+    background: var(--background-color);
+}
+
+/* Sidebar styles */
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--primary-color);
+    padding: 1rem;
+    width: 200px;
+    height: 100vh;
+}
+
+.sidebar a {
+    display: flex;
+    align-items: center;
+    color: black;
+    padding: 10px 0;
+    font-size: var(--font-size-base);
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.sidebar a:hover {
+    background-color: var(--secondary-color);
+    cursor: pointer;
+}
+
+.sidebar a:hover .material-icons-outlined {
+    transform: scale(1.2);
+}
+
+.material-icons-outlined {
+    margin-right: 10px;
+    transition: transform 0.3s ease;
+}
+
+aside {
+    height: 100vh;
+}
+
+aside .top {
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 1.4rem;
+}
+
+aside .logo {
+    display: flex;
+    gap: 0.8rem;
+}
+
+aside .logo img {
+    width: 2rem;
+    height: 2rem;
+}
+
+aside .close {
+    display: none;
+}
+
+/* SIDEBAR */
+aside .sidebar {
+    background: white;
+    display: flex;
+    flex-direction: column;
+    height: 86vh;
+    position: relative;
+    top: 3rem;
+}
+
+aside h3 {
+    font-weight: 500;
+}
+
+aside .sidebar a {
+    display: flex;
+    color: white;
+    margin-left: 2rem;
+    gap: 1rem;
+}
