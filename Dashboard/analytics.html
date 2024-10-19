@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <title>Analytics</title>
+    <link rel="stylesheet" href="analytics.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="logo">
+                <h2>SENTRY</h2>
+            </div>
+            <br/>
+            <nav>
+                <a href="db.html"><span class="material-icons-outlined">groups</span> Dashboard</a>
+                <a href="il.html"><span class="material-icons-outlined">report</span> Incident Log</a>
+                <a href="analytics.html"><span class="material-icons-outlined">trending_up</span> Analytics</a>
+                <a href="workerprofile.html"><span class="material-icons-outlined">person</span> Worker's Status</a>
+                <a href="settings.html"><span class="material-icons-outlined">construction</span> Configuration</a>
+            </nav>
+        </aside>
+
+        <!-- Main Analytics Content -->
+        <main class="main-content">
+            <!-- Analytics Grid for Cards and Charts -->
+            <div class="analytics-grid">
+                <!-- Key Statistics Card -->
+                <div class="card key-stats">
+                    <h2>Key Statistics</h2>
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <h3>Total Incidents</h3>
+                            <p>120</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3>Total Workers</h3>
+                            <p>500</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3>Avg. Response Time</h3>
+                            <p>3 mins</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3>Unsafe Conditions</h3>
+                            <p>12</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Incident Trends Chart -->
+                <div class="card incident-trends">
+                    <h2>Incident Trends</h2>
+                    <canvas id="incidentChart"></canvas>
+                </div>
+
+                <!-- Worker Safety Status Chart -->
+                <div class="card safety-status">
+                    <h2>Worker Safety Status</h2>
+                    <canvas id="safetyChart"></canvas>
+                </div>
+
+                <!-- Latest Incidents Table -->
+                <div class="card latest-incidents">
+                    <h2>Latest Incidents</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Incident</th>
+                                <th>Severity</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Oct 18, 2024</td>
+                                <td>Gas Leak</td>
+                                <td>High</td>
+                                <td>Resolved</td>
+                            </tr>
+                            <tr>
+                                <td>Oct 17, 2024</td>
+                                <td>Worker Slip</td>
+                                <td>Moderate</td>
+                                <td>Investigating</td>
+                            </tr>
+                            <!-- More rows as needed -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        // Incident Trends Chart
+        const incidentCtx = document.getElementById('incidentChart').getContext('2d');
+        const incidentChart = new Chart(incidentCtx, {
+            type: 'line',
+            data: {
+                labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+                datasets: [{
+                    label: 'Incidents',
+                    data: [3, 5, 2, 8, 4, 7, 6],
+                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    borderWidth: 2
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+
+        // Worker Safety Status Chart
+        const safetyCtx = document.getElementById('safetyChart').getContext('2d');
+        const safetyChart = new Chart(safetyCtx, {
+            type: 'pie',
+            data: {
+                labels: ['Safe', 'At Risk', 'Critical'],
+                datasets: [{
+                    label: 'Safety Status',
+                    data: [350, 120, 30],
+                    backgroundColor: ['green', 'orange', 'red'],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true
+            }
+        });
+    </script>
+</body>
+</html>

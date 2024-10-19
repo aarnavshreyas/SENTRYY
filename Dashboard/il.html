@@ -3,12 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <title>Incident Log</title>
     <link rel="stylesheet" href="il.css">
 </head>
 <body>
-    <h1>Incident Log</h1>
-
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="logo">
+                <h2>SENTRY</h2>
+            </div>
+            <br/>
+            <nav>
+                <a href="db.html"><span class="material-icons-outlined">groups</span> Dashboard</a>
+                <a href="il.html"><span class="material-icons-outlined">report</span> Incident Log</a>
+                <a href="analytics.html"><span class="material-icons-outlined">trending_up</span> Analytics</a>
+                <a href="workerprofile.html"><span class="material-icons-outlined">person</span> Worker's Status</a>
+                <a href="settings.html"><span class="material-icons-outlined">construction</span> Configuration</a>
+            </nav>
+        </aside>
+        
+    <main class="main-content">
     <!-- Search and Filter Bar -->
     <div class="filter-bar">
         <input type="date" id="filter-date" placeholder="Search by Date">
