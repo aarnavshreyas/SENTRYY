@@ -14,6 +14,15 @@
     float: left;
     padding-bottom: 20;
 }
+.logo {
+    width: 100px; /* Adjust as necessary */
+    height: auto;
+    background-color: transparent; /* Ensure the background is transparent */
+    padding: 5px; /* Optional padding */
+    display: block; /* Ensures it’s a block-level element */
+    margin: 0 auto; /* Centers the logo */
+}
+
 
 /* Style for the navigation bar */
 nav {
@@ -28,6 +37,7 @@ nav {
 nav img {
     width: 150px; /* Adjust logo size */
     margin-right: auto; /* Pushes logo to the left */
+    size-adjust: 10px;
 }
 
 /* Navigation Links - Centered */
@@ -185,60 +195,127 @@ nav.fa {
 
 
 /* -----------------------COURSE----------------------- */
-.Course{
-    width:100%;
-    margin: auto;
+.course-section {
+    padding: 50px;
     text-align: center;
-    padding-top: 10px;
-    background-color: #000;
 }
-h1{
-    font-size: 36px;
-    font-weight: 600;
-}   
-p{
-    color: #777;
-    font-size: 14px;
-    font-weight: 600;
-    line-height: 20px;
-    padding: 25px;
+
+.course-section h1 {
+    font-size: 92px;
+    margin-bottom: 10px;
+    text-align: left;
+    font-family: 'Roboto', sans-serif;
 }
-.row{
-    margin-top: 10%;
+
+.course-section p {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 40px;
+}
+
+/* Display cards horizontally */
+.row {
     display: flex;
-    justify-content:space-between;
+    justify-content: space-between; /* Add space between cards */
+    gap: 20px; /* Space between cards */
 }
- .course-col{    /*This was written to form that box around the intermediate course and degree  */
-    flex-basis: 31%;
-    background: #fff3f3;
-    border-radius: 10px;
-    margin-bottom: 5%;
-    padding: 20px 12px;
-    box-sizing: border-box;
-    transition: 0.5s;
+
+.course-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 30%; /* Control the width of each card */
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.course-card img {
     width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: opacity 0.3s ease;
 }
-h3{
-    text-align: center;
-    font-weight: 600;
-    margin: 10px 0;
+
+.course-info {
+    padding: 20px;
+    z-index: 2;
+    position: relative;
 }
-.course-col:hover{   /* This code was written to create the hover effect over intermediate, course etc */
-    box-shadow: 0 0 20px 0px rgba(0,0,0,0.2);
+
+.course-info h3 {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 10px;
+    transition: color 0.3s ease;
 }
-@media(max-width: 700px){
-    .row{
-        flex-direction: column;
-    }
+
+.course-info p {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 20px;
+    transition: color 0.3s ease;
+}
+/* 
+.author {
+    font-size: 12px;
+    color: #888;
+    border-top: 1px solid #eee;
+    padding-top: 10px;
+    transition: color 0.3s ease;
+}
+
+.author span {
+    color: #333;
+    font-weight: bold;
+} */
+
+/* Hover effect */
+.course-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Black background with 70% opacity */
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 1;
+   box-shadow: 
+        0 4px 10px rgba(0, 0, 0, 0.5), /* First shadow */
+        0 2px 20px rgba(0, 0, 0, 0.3); /* Second shadow for depth */
+    border-radius: 10px;
+}
+
+.course-card:hover::after {
+    opacity: 1;
+}
+
+.course-card:hover img {
+    opacity: none; /* Dim the image when hovering */
+}
+
+.course-card:hover h3,
+.course-card:hover p,
+.course-card:hover .author {
+    color: #fff; /* Change text color to white */
+}
+
+.course-card:hover {
+    transform: scale(1.05); /* Slight zoom effect */
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.2); /* Enhanced shadow */
 }
 
 /* ------------------------CAMPUS------------------------------------------------------ */
 .campus{
-     width: 100%; /*MADE THE WIDTH 100% TO SPREAD THE WHOLE BLACK ADDED IN THE BACKGROUND  */
+    width: 80%;
     margin: auto;
     text-align: center;
     padding-top: 50px;
-    background-color: #000;  /*displays black */
 }
 .campus-col{
     flex-basis: 32%;
@@ -282,6 +359,107 @@ h3{
     opacity: 1;
 
 }
+
+/* ----------------------------------------About us ---------------------------*/
+/* Mission Section Styles */
+.mission-section {
+    padding: 50px;
+    background-color: #fdf2e3; /* Light background similar to your screenshot */
+    color: #1e2235; /* Dark color for text */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.col {
+    flex: 1;
+    padding: 20px;
+}
+
+.text-col {
+    text-align: left;
+}
+.text-col a{
+    text-decoration: none;
+}
+
+.text-col h2 {
+    font-size: 48px;
+    color: #351e2c;
+    margin-bottom: 20px;
+}
+
+.text-col h4 {
+    font-size: 24px;
+    font-weight: normal;
+    margin-bottom: 10px;
+}
+
+.text-col p {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.image-col {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-start;
+    height: 400px; /* Adjust as per your need */
+}
+
+/* Diagonal Image Styling */
+.diagonal-image {
+    position: absolute;
+    width: 250px;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.image1 {
+    top: 0;
+    right: 0;
+    transform: rotate(-10deg);
+}
+
+.image2 {
+    top: 150px;
+    right: 50px;
+    transform: rotate(-5deg);
+}
+.image3{
+    top: 300px;
+    right:100px ;
+    transform: rotate(-3deg);
+}
+.diagonal-image:hover {
+    transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+    .row {
+        flex-direction: column;
+    }
+    .image-col {
+        height: auto;
+    }
+    .diagonal-image {
+        position: static;
+        transform: none;
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}
+
 /* --------------------------------facilities-------------------------------- */
 .facilities{
     width: 100%;
