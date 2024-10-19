@@ -1,0 +1,83 @@
+/* General Styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: black;
+    color: white;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    text-align: center;
+    margin: 20px 0;
+    font-size: 2rem;
+    color: #fff;
+}
+
+/* Grid Layout for Worker Profiles */
+.profile-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+/* Worker Card Styling */
+.worker-card {
+    background-color: #2c2c2c;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+    height: 200px;
+}
+
+.worker-card:hover {
+    transform: translateY(-10px); /* Lift the card slightly */
+    box-shadow: 0 0 15px rgba(255, 247, 0, 0.8), 0 0 25px rgba(255, 119, 0, 0.6);
+}
+
+.worker-info {
+    text-align: left;
+    max-width: 60%;
+}
+
+.worker-card img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+}
+
+/* Safety Status Colors */
+.safety-circle {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+}
+
+.green {
+    background-color: green;
+}
+
+.red {
+    background-color: red;
+}
+
+.orange {
+    background-color: orange;
+}
+
+.yellow {
+    background-color: rgb(255, 247, 0);
+}
+
+
+/* Worker Image */
+.worker-image img {
+    float: right;
+}
