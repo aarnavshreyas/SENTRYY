@@ -3,60 +3,161 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Worker Safety Dashboard</title>
-    <!-- Google Material Icons -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
-    <!-- Link to Chart.js or ApexCharts -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <title>Analytics</title>
     <link rel="stylesheet" href="db.css">
 </head>
 <body>
     <div class="dashboard-container">
         <aside class="sidebar">
             <div class="logo">
-                <h2>SENTRY</h2>
+                <img src="safetylogo.jpeg" alt="Safety Logo">
             </div>
-            <br/>
             <nav>
                 <a href="db.html"><span class="material-icons-outlined">groups</span> Dashboard</a>
                 <a href="il.html"><span class="material-icons-outlined">report</span> Incident Log</a>
-                <a href="analytics.html"><span class="material-icons-outlined">
-                    trending_up
-                    </span> Analytics</a>
-                <a href="workerprofile.html"><span class="material-icons-outlined">person</span> Worker's Status</a>
+                <a href="analytics.html"><span class="material-icons-outlined">trending_up</span> Analytics</a>
+                <a href="workerprofile.html"><span class="material-icons-outlined">person</span> Worker Status</a>
                 <a href="settings.html"><span class="material-icons-outlined">construction</span> Configuration</a>
             </nav>
+            <div class="admin-info">
+                <span class="material-icons-outlined">person_outline</span>
+                <p class="admin-text">ADMIN [USERNAME]</p>
+            </div>            
         </aside>
 
-        <main class="dashboard-content">
-            <header>
-                <h1>WELCOME BACK, [USERNAME]</h1>
-            </header>
+        <!-- Main Content -->
+        <main class="main-content">
+
+            <!-- Key Stats Section -->
+            <div class="card key-stats">
+                <h2>Key Statistics</h2>
+                <div class="stats-grid">
+                  <div class="stat-item">
+                    <h3>Total Incidents</h3>
+                    <p>120</p>
+                  </div>
+                  <div class="stat-item">
+                    <h3>Total Workers</h3>
+                    <p>500</p>
+                  </div>
+                  <div class="stat-item">
+                    <h3>Avg. Response Time</h3>
+                    <p>3 mins</p>
+                  </div>
+                  <div class="stat-item">
+                    <h3>Unsafe Conditions</h3>
+                    <p>12</p>
+                  </div>
+                  <div class="stat-item">
+                    <h3>Near Misses</h3>
+                    <p>7</p>
+                  </div>
+                  <div class="stat-item">
+                    <h3>Days Since Last Incident</h3>
+                    <p>10</p>
+                  </div>
+                </div>
+              </div>
+
+               <!-- Top Risky Workers -->
+              <div class="card risky-workers">
+                <h2>Top Risky Workers</h2>
+                <div class="stats-grid">
+                    <div class="stat-item">
+                      <h3>John Doe</h3>
+                      <p>12</p>
+                    </div>
+                    <div class="stat-item">
+                      <h3>Jane Smith</h3>
+                      <p>9</p>
+                    </div>
+                    <div class="stat-item">
+                      <h3>Marcus Lee</h3>
+                      <p>8</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>Marcus Lee</h3>
+                        <p>8</p>
+                      </div>
+                      <div class="stat-item">
+                        <h3>Marcus Lee</h3>
+                        <p>8</p>
+                      </div>
+                      <div class="stat-item">
+                        <h3>Marcus Lee</h3>
+                        <p>8</p>
+                      </div>
             
-            <section class="stats-grid">
-                <div class="stat-card">
-                    <h3>Active Workers</h3>
-                    <canvas id="activeWorkersChart"></canvas>
+                  </div>
                 </div>
-                <div class="stat-card">
-                    <h3>Safety Status</h3>
-                    <canvas id="safetyStatusChart"></canvas>
-                </div>
-                <div class="stat-card">
-                    <h3>Recent Incidents</h3>
-                    <canvas id="incidentLogChart"></canvas>
-                </div>
-                <div class="stat-card">
-                    <h3>Top Risk Workers</h3>
-                    <ul>
-                        <li>Worker 1 - High Risk</li>
-                        <li>Worker 2 - Moderate Risk</li>
-                        <li>Worker 3 - Low Risk</li>
-                    </ul>
-                </div>
-            </section>
+
+
+
+             <div class="card incident-log">
+                <h2>top 3 Incidents</h2>
+                <table>
+                  <tr>
+                    <th>Date</th>
+                    <th>Incident</th>
+                    <th>Severity</th>
+                    <th>Status</th>
+                  </tr>
+                  <tr>
+                    <td>10/15/2024</td>
+                    <td>Fire Hazard</td>
+                    <td>High</td>
+                    <td>Resolved</td>
+                  </tr>
+                  <tr>
+                      <td>10/15/2024</td>
+                      <td>Fire Hazard</td>
+                      <td>High</td>
+                      <td>Resolved</td>
+                  </tr>
+                  <tr>
+                      <td>10/15/2024</td>
+                      <td>Fire Hazard</td>
+                      <td>High</td>
+                      <td>Resolved</td>
+                  </tr>
+                </table>
+            </div>
+
+            
+             <div class="card severity-trends">
+                <h2>Severity Trends</h2>
+                <canvas id="severityTrendsChart" class="chart"></canvas>
+              </div>
+            </div> -->
+      
+            </div>
         </main>
     </div>
-    <script src="dashboard.js"></script>
+
+    <script>
+ // Severity Trends Chart
+ const ctx2 = document.getElementById('severityTrendsChart').getContext('2d');
+        const severityTrendsChart = new Chart(ctx2, {
+            type: 'line',
+            data: {
+                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+                datasets: [{
+                    label: 'Severity Over Time',
+                    data: [5, 10, 7, 3, 5, 1],
+                    fill: false,
+                    borderColor: '#f44336',
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
 </body>
 </html>

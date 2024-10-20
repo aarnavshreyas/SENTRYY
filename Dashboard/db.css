@@ -1,7 +1,8 @@
+/* General Styling */
 :root {
-    --primary-color: #333;
+    --primary-color: #fdf2e3; /* Sidebar background color */
     --secondary-color: #4CAF50;
-    --hover-color: rgba(255, 255, 255, 0.1);
+    --hover-color: rgba(200, 200, 200, 0.5); /* Lighter gray for hover effect */
 }
 
 body {
@@ -11,6 +12,17 @@ body {
     color: white;
 }
 
+.logo {
+    text-align: center; /* Center align the logo and text */
+}
+
+.logo img {
+    max-width: 80%; /* Adjust the percentage as needed */
+    height: auto;    /* Maintain aspect ratio */
+    display: block;  /* Prevent extra spacing at the bottom */
+    margin: 0 auto;  /* Center the image horizontally */
+}
+
 .dashboard-container {
     display: grid;
     grid-template-columns: 250px 1fr;
@@ -18,59 +30,146 @@ body {
 }
 
 .sidebar {
-    background-color: var(--primary-color);
+    background-color: var(--primary-color); /* Use updated color */
     padding: 1rem;
-    height: 100vh;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    height: 100%; /* Ensure sidebar takes full height */
 }
 
 .sidebar h2 {
-    color: white;
+    color: black; /* Change text color to black */
     margin-bottom: 2rem;
+}
+
+.sidebar nav {
+    flex-grow: 1; /* Allow nav to take available space */
 }
 
 .sidebar nav a {
     display: flex;
     align-items: center;
-    color: white;
+    color: black; /* Change text color to black */
     padding: 1rem;
     text-decoration: none;
     font-size: 1.2rem;
     width: 100%;
+    border-radius: 5px; /* Add rounded corners */
+    transition: background-color 0.3s; /* Smooth transition */
 }
 
 .sidebar nav a:hover {
-    background-color: var(--hover-color);
-    border-radius: 10px;
+    background-color: var(--hover-color); /* Light gray for hover effect */
+}
+
+.admin-info {
+    margin-top: auto; /* Push admin info to the bottom */
+    text-align: center; /* Center align admin info */
 }
 
 .material-icons-outlined {
     margin-right: 10px;
 }
 
-.dashboard-content {
-    padding: 2rem;
+.admin-text {
+    color: black; /* Ensure admin text is black */
 }
 
-header h1 {
-    margin-bottom: 2rem;
+/* Main Content */
+.main-content {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
 }
 
+/* Analytics Grid */
+.analytics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px; /* Spacing between the grid items */
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Card Styling */
+.card {
+    background-color: #fdf2e3; /* Change card background color */
+    border: 1px solid orange; /* Change border color to orange */
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 15px rgba(255, 247, 0, 0.5);
+    transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s; /* Add border color transition */
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 20px rgba(255, 179, 0, 0.8);
+    border-color: orange; /* Keep border color on hover */
+}
+
+h2 {
+    color: #0F0D1B; /* Change heading color to #0F0D1B */
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+/* Stats Grid */
 .stats-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Adjusted for more grid items */
+    gap: 20px; /* Spacing between stat items */
+    justify-items: center; /* Center alignment */
 }
 
-.stat-card {
+.stat-item {
+    background-color: #333;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.stat-item h3 {
+    color: orange; /* Change stat item heading color to orange */
+    margin-bottom: 5px;
+}
+
+.stat-item p {
+    font-size: 1.5rem;
+    color: white; /* Change stat item text color to white */
+}
+
+/* Table Styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 10px;
+    border: 1px solid #444;
+    text-align: left;
+}
+
+th {
+    background-color: #333; /* Keep the header background color the same */
+    color: orange; /* Change header text color to orange */
+}
+
+td {
     background-color: #1e1e1e;
-    padding: 1.5rem;
-    border-radius: 10px;
-    transition: all 0.3s ease;
 }
 
-.stat-card:hover {
-    box-shadow: 0 4px 20px rgba(0, 255, 0, 0.5);
+canvas {
+    max-height: 300px; /* To fix the weird space below the graph */
+    margin-bottom: 20px;
+}
+
+/* Additional Styling */
+.new-grid {
+    background-color: #1e1e1e;
+    border: 1px solid #444;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 0 15px rgba(0, 150, 255, 0.5);
 }

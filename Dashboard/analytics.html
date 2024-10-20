@@ -10,51 +10,31 @@
 </head>
 <body>
     <div class="dashboard-container">
-        <!-- Sidebar -->
         <aside class="sidebar">
             <div class="logo">
-                <h2>SENTRY</h2>
+                <img src="safetylogo.jpeg" alt="Safety Logo">
             </div>
-            <br/>
             <nav>
                 <a href="db.html"><span class="material-icons-outlined">groups</span> Dashboard</a>
                 <a href="il.html"><span class="material-icons-outlined">report</span> Incident Log</a>
                 <a href="analytics.html"><span class="material-icons-outlined">trending_up</span> Analytics</a>
-                <a href="workerprofile.html"><span class="material-icons-outlined">person</span> Worker's Status</a>
+                <a href="workerprofile.html"><span class="material-icons-outlined">person</span> Worker Status</a>
                 <a href="settings.html"><span class="material-icons-outlined">construction</span> Configuration</a>
             </nav>
+            <div class="admin-info">
+                <span class="material-icons-outlined">person_outline</span>
+                <p class="admin-text">ADMIN [USERNAME]</p>
+            </div>            
         </aside>
 
         <!-- Main Analytics Content -->
         <main class="main-content">
             <!-- Analytics Grid for Cards and Charts -->
             <div class="analytics-grid">
-                <!-- Key Statistics Card -->
-                <div class="card key-stats">
-                    <h2>Key Statistics</h2>
-                    <div class="stats-grid">
-                        <div class="stat-item">
-                            <h3>Total Incidents</h3>
-                            <p>120</p>
-                        </div>
-                        <div class="stat-item">
-                            <h3>Total Workers</h3>
-                            <p>500</p>
-                        </div>
-                        <div class="stat-item">
-                            <h3>Avg. Response Time</h3>
-                            <p>3 mins</p>
-                        </div>
-                        <div class="stat-item">
-                            <h3>Unsafe Conditions</h3>
-                            <p>12</p>
-                        </div>
-                    </div>
-                </div>
-
                 <!-- Incident Trends Chart -->
                 <div class="card incident-trends">
                     <h2>Incident Trends</h2>
+                    <br/>
                     <canvas id="incidentChart"></canvas>
                 </div>
 
@@ -64,34 +44,28 @@
                     <canvas id="safetyChart"></canvas>
                 </div>
 
-                <!-- Latest Incidents Table -->
-                <div class="card latest-incidents">
-                    <h2>Latest Incidents</h2>
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Date</th>
-                                <th>Incident</th>
-                                <th>Severity</th>
-                                <th>Status</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Oct 18, 2024</td>
-                                <td>Gas Leak</td>
-                                <td>High</td>
-                                <td>Resolved</td>
-                            </tr>
-                            <tr>
-                                <td>Oct 17, 2024</td>
-                                <td>Worker Slip</td>
-                                <td>Moderate</td>
-                                <td>Investigating</td>
-                            </tr>
-                            <!-- More rows as needed -->
-                        </tbody>
-                    </table>
+                <!-- Operational Efficiency Chart -->
+                <div class="card efficiency-status">
+                    <h2>Operational Efficiency</h2>
+                    <canvas id="efficiencyChart"></canvas>
+                </div>
+
+                <!-- Risk Levels Chart -->
+                <div class="card risk-levels">
+                    <h2>Risk Levels</h2>
+                    <canvas id="riskChart"></canvas>
+                </div>
+
+                <!-- Average Response Time Chart -->
+                <div class="card response-time">
+                    <h2>Average Response Time</h2>
+                    <canvas id="responseChart"></canvas>
+                </div>
+
+                <!-- Compliance Rate Chart -->
+                <div class="card compliance-rate">
+                    <h2>Compliance Rate</h2>
+                    <canvas id="complianceChart"></canvas>
                 </div>
             </div>
         </main>
@@ -132,6 +106,96 @@
                     label: 'Safety Status',
                     data: [350, 120, 30],
                     backgroundColor: ['green', 'orange', 'red'],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true
+            }
+        });
+
+        // Operational Efficiency Chart
+        const efficiencyCtx = document.getElementById('efficiencyChart').getContext('2d');
+        const efficiencyChart = new Chart(efficiencyCtx, {
+            type: 'bar',
+            data: {
+                labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+                datasets: [{
+                    label: 'Efficiency',
+                    data: [80, 85, 75, 90, 95, 88, 92],
+                    backgroundColor: 'rgba(0, 150, 255, 0.6)',
+                    borderColor: 'rgba(0, 150, 255, 1)',
+                    borderWidth: 2
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+
+        // Risk Levels Chart
+        const riskCtx = document.getElementById('riskChart').getContext('2d');
+        const riskChart = new Chart(riskCtx, {
+            type: 'radar',
+            data: {
+                labels: ['Low', 'Moderate', 'High', 'Critical'],
+                datasets: [{
+                    label: 'Risk Levels',
+                    data: [60, 45, 25, 10],
+                    backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                    borderColor: 'rgba(255, 99, 132, 1)',
+                    borderWidth: 2
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    r: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+
+        // Average Response Time Chart
+        const responseCtx = document.getElementById('responseChart').getContext('2d');
+        const responseChart = new Chart(responseCtx, {
+            type: 'line',
+            data: {
+                labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+                datasets: [{
+                    label: 'Avg. Response Time (min)',
+                    data: [4, 3, 2, 5, 3.5, 4.2, 2.8],
+                    backgroundColor: 'rgba(255, 206, 86, 0.2)',
+                    borderColor: 'rgba(255, 206, 86, 1)',
+                    borderWidth: 2
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+
+        // Compliance Rate Chart
+        const complianceCtx = document.getElementById('complianceChart').getContext('2d');
+        const complianceChart = new Chart(complianceCtx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Compliant', 'Non-Compliant'],
+                datasets: [{
+                    label: 'Compliance Rate',
+                    data: [90, 10],
+                    backgroundColor: ['rgba(54, 162, 235, 0.6)', 'rgba(255, 99, 132, 0.6)'],
                     borderWidth: 1
                 }]
             },
