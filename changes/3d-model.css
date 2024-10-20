@@ -29,3 +29,71 @@
     }
 
 }
+
+.autoShow{
+    animation: autoShowAnimation;
+    animation-timeline: view (40% 30%) ;
+}
+ @keyframes autoShowAnimation{
+    from{
+        opacity: 0;
+        transform:translateY(200px) scale(0.3);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+ }
+
+ /* General body styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: black;
+    color: white;
+    scroll-behavior: smooth;
+}
+
+/* Styling for sections */
+section {
+    min-height: 100vh; /* Full screen sections */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Hero section */
+.hero-section {
+    background-color: #282828;
+    animation: fadeIn 1.5s ease-in-out forwards;
+}
+
+/* Content sections */
+.content-section {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+/* Scroll animation */
+@keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(30px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Adding an active state when scrolling happens */
+section.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Additional styling for titles */
+h1, h2 {
+    font-size: 2.5rem;
+}
+
+p {
+    font-size: 1.2rem;
+}

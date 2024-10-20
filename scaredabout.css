@@ -1,0 +1,130 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background-color: #f9f9f9;
+    color: #333;
+    line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin-bottom: 1rem;
+}
+
+p {
+    margin-bottom: 1.5rem;
+    font-size: 18px;
+}
+
+a {
+    text-decoration: none;
+    color: #333;
+}
+
+/* Header Section */
+header {
+    background: #1e2235;
+    color: white;
+    padding: 2rem 0;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 48px;
+}
+
+header p {
+    font-size: 18px;
+    margin-top: 0.5rem;
+}
+
+/* Intro Section */
+.intro {
+    background: #fdf2e3;
+    padding: 50px 0;
+    text-align: center;
+}
+
+.intro h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #351e2c;
+}
+
+.intro p {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 18px;
+}
+
+/* Features Section */
+.features {
+    padding: 50px 0;
+    background-color: #fff;
+}
+
+.features h2 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.feature-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 50px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.feature-item.reverse {
+    flex-direction: row-reverse;
+}
+
+.feature-text {
+    width: 50%;
+    padding: 20px;
+}
+
+.feature-text h3 {
+    font-size: 28px;
+    color: #351e2c;
+    margin-bottom: 15px;
+}
+
+.feature-text p {
+    color: #666;
+    font-size: 18px;
+    line-height: 1.7;
+}
+
+.feature-image {
+    width: 45%;
+    padding: 20px;
+}
+
+.feature-image img {
+    width: 100%;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect for images */
+.feature-image img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Footer */
+footer {
+    background: #1e2235;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+    font-size: 14px;
+}

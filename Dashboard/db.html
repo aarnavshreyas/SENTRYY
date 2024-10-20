@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Worker Safety Dashboard</title>
+    <!-- Google Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+    <!-- Link to Chart.js or ApexCharts -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="db.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <aside class="sidebar">
+            <div class="logo">
+                <h2>SENTRY</h2>
+            </div>
+            <br/>
+            <nav>
+                <a href="db.html"><span class="material-icons-outlined">groups</span> Dashboard</a>
+                <a href="il.html"><span class="material-icons-outlined">report</span> Incident Log</a>
+                <a href="analytics.html"><span class="material-icons-outlined">
+                    trending_up
+                    </span> Analytics</a>
+                <a href="workerprofile.html"><span class="material-icons-outlined">person</span> Worker's Status</a>
+                <a href="settings.html"><span class="material-icons-outlined">construction</span> Configuration</a>
+            </nav>
+        </aside>
+
+        <main class="dashboard-content">
+            <header>
+                <h1>WELCOME BACK, [USERNAME]</h1>
+            </header>
+            
+            <section class="stats-grid">
+                <div class="stat-card">
+                    <h3>Active Workers</h3>
+                    <canvas id="activeWorkersChart"></canvas>
+                </div>
+                <div class="stat-card">
+                    <h3>Safety Status</h3>
+                    <canvas id="safetyStatusChart"></canvas>
+                </div>
+                <div class="stat-card">
+                    <h3>Recent Incidents</h3>
+                    <canvas id="incidentLogChart"></canvas>
+                </div>
+                <div class="stat-card">
+                    <h3>Top Risk Workers</h3>
+                    <ul>
+                        <li>Worker 1 - High Risk</li>
+                        <li>Worker 2 - Moderate Risk</li>
+                        <li>Worker 3 - Low Risk</li>
+                    </ul>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="dashboard.js"></script>
+</body>
+</html>

@@ -3,74 +3,81 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>University Easy Design</title>
-    <link rel="stylesheet" href="website.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-
-
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>SENTRY - Industrial Safety App</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="scaredabout.css">
 </head>
 <body>
-    <section class="sub-header">
-      <nav>
-        <a href="dragon.html"><img src="PICS/logo.png"></a>
-        <div class="nav-links" id="navLinks">
-          <i class="fa fa-times" onclick="hidemenu()"></i>
-            <ul>
-                <li><a href =""></a>HOME</li>
-                <li><a href =""></a>ABOUT</li>
-                <li><a href =""></a>COURSE</li>
-                <li><a href =""></a>BLOG</li>
-                <li><a href =""></a>CONTACT</li>
-            </ul>
+    <header>
+        <div class="container">
+            <h1>SENTRY</h1>
+            <p>Revolutionizing Worker Safety with Innovative Technology</p>
         </div>
-        <i class="fa fa-bars"  onclick="showmenu()"></i>
-      </nav>
-      <h1>About us</h1>
+    </header>
+
+    <section class="intro">
+        <div class="container">
+            <h2>Protecting Workers, Preventing Accidents</h2>
+            <p>SENTRY is an industrial safety app designed to monitor worker well-being and prevent potential hazards. By integrating advanced safety technology, SENTRY empowers both management and workers to maintain a safe and productive environment. Safety is no longer reactive—it's proactive.</p>
+        </div>
     </section>
-      <!-- --------------------------------ABOUT US CONTENT---------------------- -->
-       <section class="about us">
-        <div class="row">
-          <div class="about-col">
-            <h1>WE ARE THE WORLDS LARGEST UNIVERSITY</h1>
-            <P>At Houston University, we pride ourselves on being the global leader in higher education. With a sprawling campus that spans multiple continents, we offer unparalleled resources, world-class faculty, and cutting-edge facilities. Our student body is as diverse as our academic programs, with students from over 100 countries pursuing excellence in fields ranging from technology and medicine to the arts and humanities.Join the ranks of innovators, leaders, and thinkers at Houston University, where we transform ambition into achievement, and education into a global legacy.</P>
-            <a href="" class="hero-btn red-btn">EXPLORE NOW</a>
-          </div>
-          <div class="about-col">
-            <img src="PICS/eduford_img/about.jpg">
-          </div>
+
+    <section class="features">
+        <div class="container">
+            <h2>HOW SENTRY HELPS</h2>
+
+            <!-- Real-Time Monitoring (left text, right image) -->
+            <div class="feature-item">
+                <div class="feature-text">
+                    <h3>Real-Time Monitoring</h3>
+                    <p>SENTRY provides live updates on worker conditions, environments, and machinery performance. Supervisors can access this data from anywhere, ensuring that workers are always monitored for safety, even in high-risk conditions.</p>
+                </div>
+                <div class="feature-image">
+                    <img src="PICS/eduford_img/realtime.jpeg" alt="Real-Time Monitoring Image">
+                </div>
+            </div>
+
+            <!-- Predictive Analytics (right text, left image) -->
+            <div class="feature-item reverse">
+                <div class="feature-text">
+                    <h3>Predictive Analytics</h3>
+                    <p>By collecting historical data on worker health, machinery usage, and environmental factors, SENTRY can predict potential risks. These insights allow managers to make informed decisions, reducing the chance of incidents before they happen.</p>
+                </div>
+                <div class="feature-image">
+                    <img src="PICS/eduford_img/predictiveanalytics.jpeg" alt="Predictive Analytics Image">
+                </div>
+            </div>
+
+            <!-- Automated Alerts (left text, right image) -->
+            <div class="feature-item">
+                <div class="feature-text">
+                    <h3>Automated Alerts and Notifications</h3>
+                    <p>SENTRY’s automated alert system notifies workers and supervisors immediately if environmental conditions become dangerous or if a machine malfunctions. Instant alerts ensure quick response times, protecting workers from harm.</p>
+                </div>
+                <div class="feature-image">
+                    <img src="PICS/eduford_img/automatedalerts.jpeg" alt="Automated Alerts Image">
+                </div>
+            </div>
+
+            <!-- Emergency Assistance (right text, left image) -->
+            <div class="feature-item reverse">
+                <div class="feature-text">
+                    <h3>Emergency Assistance</h3>
+                    <p>In the case of an emergency, SENTRY provides workers with immediate guidance on what steps to take, where to evacuate, and how to protect themselves. The app connects directly with emergency services, reducing response times.</p>
+                </div>
+                <div class="feature-image">
+                    <img src="PICS/eduford_img/emergencyyy.jpeg" alt="Emergency Assistance Image">
+                </div>
+            </div>
+
         </div>
-       </section>
+    </section>
 
-    
-   
-  <!-- ------------------------------------------------FOOOTER----------------- -->
-  <section class="footer">
-    <h4>About us</h4>
-    <p>
-      Our prestigious institute is dedicated to academic excellence, offering world-class education, renowned faculty, and cutting-edge facilities.<br> We empower students to become leaders and innovators, fostering both personal and professional growth in a dynamic environment.</p>
-    <div class="icons">
-      <i class="fab fa-facebook"></i>
-      <i class="fab fa-instagram"></i>
-      <i class="fab fa-twitter"></i>
-      <i class="fab fa-linkedin"></i>
-      
-    </div>
-    <p>Made by  Aarnav shreyas<i class="fa fa-heart"></i> </p>
-</section>
-<!-- -------------JAVASCRIPT----------------- -->
-    <script>
-      var navLinks= document.getElementById("navLinks");
-      function showmenu(){
-        navLinks.style.right=0;
-        }
-        function hidemenu(){
-          navLinks.style.right="-200px";
-        }
-
-    </script>
-
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 SENTRY Industrial Safety. All rights reserved. Designed to make your workplace safer.</p>
+        </div>
+    </footer>
 </body>
 </html>
